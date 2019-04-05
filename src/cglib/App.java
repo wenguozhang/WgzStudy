@@ -1,21 +1,18 @@
 package cglib;
 
-import org.junit.Test;
-
 /**
- * ²âÊÔÀà
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class App {
 
-    @Test
     public void test(){
-        //Ä¿±ê¶ÔÏó
+        //Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½
         UserDao target = new UserDao();
 
-        //´úÀí¶ÔÏó
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         UserDao proxy = (UserDao)new ProxyFactory(target).getProxyInstance();
 
-        //Ö´ĞĞ´úÀí¶ÔÏóµÄ·½·¨
+        //Ö´ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
         proxy.save();
     }
 }

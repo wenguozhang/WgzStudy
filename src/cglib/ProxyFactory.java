@@ -7,39 +7,39 @@ import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
 /**
- * Cglib×ÓÀà´úÀí¹¤³§
- * ¶ÔUserDaoÔÚÄÚ´æÖÐ¶¯Ì¬¹¹½¨Ò»¸ö×ÓÀà¶ÔÏó
+ * Cglibï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½UserDaoï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ð¶ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class ProxyFactory implements MethodInterceptor{
-    //Î¬»¤Ä¿±ê¶ÔÏó
+    //Î¬ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½
     private Object target;
 
     public ProxyFactory(Object target) {
         this.target = target;
     }
 
-    //¸øÄ¿±ê¶ÔÏó´´½¨Ò»¸ö´úÀí¶ÔÏó
+    //ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ó´´½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public Object getProxyInstance(){
-        //1.¹¤¾ßÀà
+        //1.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Enhancer en = new Enhancer();
-        //2.ÉèÖÃ¸¸Àà
+        //2.ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½
         en.setSuperclass(target.getClass());
-        //3.ÉèÖÃ»Øµ÷º¯Êý
+        //3.ï¿½ï¿½ï¿½Ã»Øµï¿½ï¿½ï¿½ï¿½ï¿½
         en.setCallback(this);
-        //4.´´½¨×ÓÀà(´úÀí¶ÔÏó)
+        //4.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
         return en.create();
 
     }
 
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
-        System.out.println("¿ªÊ¼ÊÂÎñ...");
+        System.out.println("ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...");
 
-        //Ö´ÐÐÄ¿±ê¶ÔÏóµÄ·½·¨
+        //Ö´ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
         Object returnValue = method.invoke(target, args);
         // Object returnValue = proxy.invoke(target, args);
 
-        System.out.println("Ìá½»ÊÂÎñ...");
+        System.out.println("ï¿½á½»ï¿½ï¿½ï¿½ï¿½...");
 
         return returnValue;
     }
