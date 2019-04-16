@@ -1,20 +1,18 @@
 package proxy;
 /**
- * 测试类
+ * 锟斤拷锟斤拷锟斤拷
  */
 public class DynamicProxy {
     public static void main(String[] args) {
-        // 目标对象
+        //鐩爣瀵硅薄
         IUserDao target = new UserDao();
-        // 【原始的类型 class cn.itcast.b_dynamic.UserDao】
         System.out.println(target.getClass());
 
-        // 给目标对象，创建代理对象
+        //浠ｇ悊瀵硅薄
         IUserDao proxy = (IUserDao) new ProxyFactory(target).getProxyInstance();
-        // class $Proxy0   内存中动态生成的代理对象
         System.out.println(proxy.getClass());
 
-        // 执行方法   【代理对象】
+        //浠ｇ悊鏂规硶鎵ц
         proxy.save();
         proxy.delete();
     }

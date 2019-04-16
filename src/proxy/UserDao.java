@@ -1,13 +1,14 @@
 package proxy;
 /**
- * ½Ó¿ÚÊµÏÖ
- * Ä¿±ê¶ÔÏó
+ * @author wgz
+ *
+ * @time 2019å¹´4æœˆ7æ—¥ä¸‹åˆ4:40:05
  */
 public class UserDao implements IUserDao {
     public void save() {
-        System.out.println("----ÒÑ¾­±£´æÊı¾İ!----");
+        System.out.println("------ä¿å­˜æ“ä½œ------");
     }
     public void delete() {
-        System.out.println("----ÒÑ¾­É¾³ıÊı¾İ!----");
+        System.out.println("------åˆ é™¤æ“ä½œ------");
     }
 }

@@ -1,20 +1,20 @@
 package proxy;
 
 import java.lang.reflect.*;
-
 /**
- * ´´½¨¶¯Ì¬´úÀí¶ÔÏó
- * ¶¯Ì¬´úÀí²»ĞèÒªÊµÏÖ½Ó¿Ú,µ«ÊÇĞèÒªÖ¸¶¨½Ó¿ÚÀàĞÍ
+ * @author wgz
+ *
+ * @time 2019å¹´4æœˆ7æ—¥ä¸‹åˆ4:45:23
  */
 public class ProxyFactory{
 
-    //Î¬»¤Ò»¸öÄ¿±ê¶ÔÏó
+    //ç›®æ ‡å¯¹è±¡
     private Object target;
     public ProxyFactory(Object target){
         this.target=target;
     }
 
-   //¸øÄ¿±ê¶ÔÏóÉú³É´úÀí¶ÔÏó
+   //ä»£ç†å¯¹è±¡
     public Object getProxyInstance(){
         return Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),
@@ -22,10 +22,10 @@ public class ProxyFactory{
                 new InvocationHandler() {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                        System.out.println("¿ªÊ¼ÊÂÎñ2");
-                        //Ö´ĞĞÄ¿±ê¶ÔÏó·½·¨
+                        System.out.println("åŠ¨æ€ä»£ç†å¼€å§‹...");
+                        //ä½¿ç”¨åå°„çš„mothod.invokeè°ƒç”¨ç›®æ ‡å¯¹è±¡æ–¹æ³•
                         Object returnValue = method.invoke(target, args);
-                        System.out.println("Ìá½»ÊÂÎñ2");
+                        System.out.println("åŠ¨æ€ä»£ç†ç»“æŸ...");
                         return returnValue;
                     }
                 }

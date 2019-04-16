@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 
 /**
@@ -96,5 +97,22 @@ public class TreeUtil {
         }  
         printNode(root);  
     }  
+    
+    public static void LaywerTraversal(TreeNode root){
+       if(root==null) return;
+       LinkedList<TreeNode> list = new LinkedList<TreeNode>();  
+       list.add(root);
+       TreeNode currentNode;
+       while(!list.isEmpty()){
+           currentNode=list.poll();
+           printNode(currentNode);  
+           if(currentNode.getLeftNode()!=null){
+               list.add(currentNode.getLeftNode());
+           }
+           if(currentNode.getRightNode()!=null){
+               list.add(currentNode.getRightNode());
+           }
+       }
+   }
 }
 

@@ -1,8 +1,8 @@
 package link;
  
 /**
- * Created by david on 2018/8/16
- * 单链表反转
+ * Created by wgz on 2018/8/16
+ * 閾捐〃
  */
 public class NodeRe {
  
@@ -14,29 +14,22 @@ public class NodeRe {
         head.setNext(node1);
         node1.setNext(node2);
         node2.setNext(node3);
-        // 调用反转方法
-        head = reverse(head);
+        
+//        head = reverse(head);
  
-        // 打印反转后的结果
         while (null != head) {
             System.out.print(head.getData() + " ");
             head = head.getNext();
         }
     }
  
-    public static Node reverse(Node head){
-        // head看作是前一结点，head.getNext()是当前结点，
-        // reHead是反转后新链表的头结点
+    public  Node reverse(Node head){
         if(head == null || head.getNext() == null){
-            // 若为空链或者当前结点在尾结点，则直接还回
             return head;
         }
         Node reHead = reverse(head.getNext());
-        // 将当前结点的指针域指向前一结点
         head.getNext().setNext(head);
-        // 前一结点的指针域令为null;
         head.setNext(null);
-        // 反转后新链表的头结点
         return reHead;
     }
 }

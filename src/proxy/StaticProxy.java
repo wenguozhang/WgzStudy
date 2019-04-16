@@ -1,16 +1,18 @@
 package proxy;
 /**
- * ²âÊÔÀà
+ * @author wgz
+ *
+ * @time 2019å¹´4æœˆ7æ—¥ä¸‹åˆ4:44:50
  */
 public class StaticProxy {
     public static void main(String[] args) {
-        //Ä¿±ê¶ÔÏó
+        //ç›®æ ‡å¯¹è±¡
         UserDao target = new UserDao();
 
-        //´úÀí¶ÔÏó,°ÑÄ¿±ê¶ÔÏó´«¸ø´úÀí¶ÔÏó,½¨Á¢´úÀí¹ØÏµ
+        //ä»£ç†å¯¹è±¡
         UserDaoProxy proxy = new UserDaoProxy(target);
 
-        proxy.save();//Ö´ĞĞµÄÊÇ´úÀíµÄ·½·¨
+        proxy.save();//Ö´ä»£ç†å¯¹è±¡ä¿å­˜
         
         proxy.delete();
     }

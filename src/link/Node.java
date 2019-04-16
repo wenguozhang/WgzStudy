@@ -1,27 +1,37 @@
 package link;
 
 public class Node {
-    //为了方便，这两个变量都使用public，而不用private就不需要编写get、set方法了。
-    //存放数据的变量，简单点，直接为int型
+    //鑺傜偣鏁版嵁
     public int data;
-    //存放结点的变量,默认为null
+    //鍓嶉┍
+    public Node before;
+    //鍚庣户
     public Node next;
     
-    //构造方法，在构造时就能够给data赋值
-    public Node(int data){
-        this.data = data;
-    }
+	public int getData() {
+		return data;
+	}
+	public void setData(int data) {
+		this.data = data;
+	}
+	public Node getBefore() {
+		return before;
+	}
+	public void setBefore(Node before) {
+		this.before = before;
+	}
+	public Node getNext() {
+		return next;
+	}
+	public void setNext(Node next) {
+		this.next = next;
+	}
     
-    public int getData(){
-        return this.data;
-    }
-    
-    public Node getNext(){
-    	return this.next;
-    }
-    
-    public void setNext(Node next){
-        this.next = next;
-    }
-
+	public Node(int date){
+		this.data = date;
+	}
+	
+	public void displayNode(){
+		System.out.print(data+";");
+	}
 }

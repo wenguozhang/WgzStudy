@@ -1,18 +1,20 @@
 package proxy;
 /**
- * ´úÀí¶ÔÏó,¾²Ì¬´úÀí
+ * @author wgz
+ *
+ * @time 2019å¹´4æœˆ7æ—¥ä¸‹åˆ4:41:10
  */
 public class UserDaoProxy implements IUserDao{
-    //½ÓÊÕ±£´æÄ¿±ê¶ÔÏó
+    //ç›®æ ‡å¯¹è±¡
     private IUserDao target;
     public UserDaoProxy(IUserDao target){
         this.target=target;
     }
 
     public void save() {
-        System.out.println("¿ªÊ¼ÊÂÎñ...");
-        target.save();//Ö´ĞĞÄ¿±ê¶ÔÏóµÄ·½·¨
-        System.out.println("Ìá½»ÊÂÎñ...");
+        System.out.println("é™æ€ä»£ç†ä¿å­˜å¼€å§‹...");
+        target.save();
+        System.out.println("é™æ€ä»£ç†ä¿å­˜ç»“æŸ...");
     }
 
 	@Override
